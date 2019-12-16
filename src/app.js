@@ -4,6 +4,7 @@ import ChainApi from './api/chain'
 import Nav from './components/nav/nav'
 import ChainView from './components/block/chain'
 import Actors from './components/actor/actors'
+import Info from './components/info/info'
 import BlockDetails from './components/block/block-details'
 import ErrorHandler from './components/error'
 
@@ -22,6 +23,10 @@ const ChainPageContainer = () => {
   return <ChainView chainApi={chainApi} />
 }
 
+const InfoPageContainer = () => {
+  return <Info />
+}
+
 const Main = () => (
     <Router>
       <ErrorHandler>
@@ -33,6 +38,7 @@ const Main = () => (
             <Route exact path='/actors' component={ActorsPageContainer} />
             <Route path='/chain/:cid' component={ChainPageContainer} />
             <Route path='/blocks/:cid' component={BlockPageContainer} />
+            <Route exact path='/info' component={InfoPageContainer} />
             <Route render={() => <h3>404</h3>} />
           </Switch>
         </div>
