@@ -116,7 +116,7 @@ class Chain extends Component {
             ? chain
                 .map((gen, i) => <Generation blocks={gen} key={i} height={heights[i]} />)
             : null}
-          {!paginating && numUpdatesFromChain > 3 && this.state.page < 10 &&
+          {!paginating && numUpdatesFromChain > 3 && this.state.page < 10 ?
             <div
               style={{
                 cursor: 'pointer',
@@ -138,8 +138,7 @@ class Chain extends Component {
             >
               <img src={arrowDown} alt="" className="dib v-mid" />
             </div>
-          }
-          {paginating &&
+            :
             <div style={{ height: '60px' }}>
               <Spinner loading style={{ top: '20px', left: '31px', position: 'relative', height: '20px' }} />
             </div>

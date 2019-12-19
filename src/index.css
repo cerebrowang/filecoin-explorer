@@ -79,15 +79,17 @@ table .inner {
   margin-top: 0px !important;
 }
 
-#page-container {
-  overflow: scroll;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
 @media (max-width: 780px) {
   #error-message {
     padding-right: 60px;
+  }
+
+  .pr4 {
+    padding-right: 4rem;
+  }
+
+  #page-container {
+    overflow-x: scroll;
   }
 }
 
